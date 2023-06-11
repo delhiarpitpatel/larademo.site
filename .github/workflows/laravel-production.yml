@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy to production
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd ${{ secrets.SERVER_PATH }} && git pull origin production && ${{ secrets.DEPLOY_COMMAND }}"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd ${{ secrets.SERVER_PATH }} && git pull origin production && ${{ secrets.DEPLOY_COMMAND }}"
